@@ -29,7 +29,7 @@ const Navbar = (props) => {
       setData(results);
     } catch (error) {
       // console.log(error);
-      alert("No User Found, try williamxmejia")
+      alert("No User Found, try williamxmejia");
     }
   };
 
@@ -79,9 +79,6 @@ const Navbar = (props) => {
         </div>
       </nav>
       <div className="container mt-5">
-        <h1 className="text-center mb-5">
-          Welcome to the GitHub Profile Finder
-        </h1>
         {/* {error && (
           <div>No user Found</div>
         )} */}
@@ -119,20 +116,25 @@ const Navbar = (props) => {
         )}
 
         {data.length > 20 && (
-          <div className="d-flex flex-wrap justify-content-center">
-            {data.map((user) => (
-              <div key={user.id} className="card col-2 mx-3 mb-5">
-                <img
-                  className="card-img-top"
-                  src={user.avatar_url}
-                  alt="Card image cap"
-                />
-                <div className="card-body fw-bold text-uppercase text-center">
-                  <p>{user.login}</p>
-                  <p>ID: {user.id}</p>
+          <div>
+            <h1 className="text-center mb-5">
+              Welcome to the GitHub Profile Finder
+            </h1>
+            <div className="d-flex flex-wrap justify-content-center">
+              {data.map((user) => (
+                <div key={user.id} className="card col-2 mx-3 mb-5">
+                  <img
+                    className="card-img-top"
+                    src={user.avatar_url}
+                    alt="Card image cap"
+                  />
+                  <div className="card-body fw-bold text-uppercase text-center">
+                    <p>{user.login}</p>
+                    <p>ID: {user.id}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         )}
       </div>
