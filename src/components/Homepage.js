@@ -126,9 +126,9 @@ const Navbar = (props) => {
                     src={user.avatar_url}
                     alt="Card image cap"
                   />
-                  <div className="card-body fw-bold text-uppercase text-center">
-                    <p>{user.login}</p>
-                    <p>ID: {user.id}</p>
+                  <div className="card-body fw-bold text-center">
+                    <p className="text-uppercase">{user.login}</p>
+                    <p className="text-uppercase">ID: {user.id}</p>
                     <p>
                       <a href={`https://github.com/${data.login}`}>GitHub</a>
                     </p>
