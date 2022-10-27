@@ -94,9 +94,7 @@ const Navbar = (props) => {
                 <div className="card-body fw-bold text-center">
                   <p className="text-uppercase">{data.login}</p>
                   <p>
-                    <a href={`https://github.com/${data.login}`}>
-                      GitHub Account
-                    </a>
+                    <a href={`https://github.com/${data.login}`}>GitHub</a>
                   </p>
                 </div>
               </div>
@@ -131,6 +129,9 @@ const Navbar = (props) => {
                   <div className="card-body fw-bold text-uppercase text-center">
                     <p>{user.login}</p>
                     <p>ID: {user.id}</p>
+                    <p>
+                      <a href={`https://github.com/${data.login}`}>GitHub</a>
+                    </p>
                   </div>
                 </div>
               ))}
