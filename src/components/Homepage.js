@@ -50,6 +50,10 @@ const Navbar = (props) => {
             <form
               onSubmit={(e) => {
                 getSingle();
+                if(search === ""){
+                  getGitHub();
+                }
+                
                 e.preventDefault();
               }}
             >
