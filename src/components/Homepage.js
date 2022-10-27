@@ -130,7 +130,7 @@ const Navbar = (props) => {
                     <p className="text-uppercase">{user.login}</p>
                     <p className="text-uppercase">ID: {user.id}</p>
                     <p>
-                      <a href={`https://github.com/${data.login}`}>GitHub</a>
+                      <a href={`https://github.com/${user.login}`}>GitHub</a>
                     </p>
                   </div>
                 </div>
