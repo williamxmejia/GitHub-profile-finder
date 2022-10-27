@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
       <Navbar></Navbar>
-      <Display></Display>
+      {/* <Display></Display> */}
     </div>
   );
 }

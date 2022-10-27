@@ -1,21 +1,145 @@
-import '../bootstrap.css';
-import '../style.css';
-
+import "../bootstrap.css";
+import "../style.css";
+import Fuse from "fuse.js";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { Octokit } from "octokit";
 
 const Navbar = (props) => {
-    return (
-        <nav className='container mt-5 border-bottom p-4 bg-light'>
-            <div className='d-flex justify-content-between'>
-                <h5 className='mt-2'>GitHub Profile Finder</h5>
-                <div className=''>
-                    <input className='form-control-sm mx-2' type="text" id="name" name="name"
-                    /><button className='btn btn-primary'>Search</button>
+  //   const octokit = new Octokit({
+  //     auth: process.env.TOKEN,
+  //    });
+  //   const github = async()=>await octokit.request("GET /octocat", {});
+  //   console.log(github);
+
+  const [data, setData] = useState([]);
+  const [filteredResuts, setFilteredResults] = useState([]);
+  const [search, setSearch] = useState("");
+
+  // const fuse = new Fuse(data, {
+  //   keys: ["login"],
+  // });
+  // console.log(search);
+
+  //   console.log(fuse.search(search));
+  // let test = fuse.search(search);
+  //   console.log(test[0])
+  // const map1 = test.map((t) => t.item);
+  // console.log(map1);
+
+  const getGitHub = async () => {
+    try {
+      const url = `https://api.github.com/users`;
+
+      const response = await axios(url);
+      const results = response.data;
+      console.log(results);
+      setData(results);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const getSingle = async () => {
+    try {
+      const url = `https://api.github.com/users/${search}`;
+
+      const response = await axios(url);
+      const results = response.data;
+      console.log(results);
+      setData(results);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleChange = (e) => {
+    // console.log(e.target.value);
+    setSearch(e.target.value);
+  };
+
+  // useEffect(() => {
+  //   if (search === "") {
+  //     getGitHub();
+  //   }
+  // }, [data]);
+
+  // useEffect(() => {
+  //   if(search !== ""){
+  //     setFilteredResults(fuse.search(search));
+  //   }
+  // }, [search, filteredResuts]);
+
+  // useEffect(() => {
+  //   const results = data;
+  //   setSearch(results)
+  // }, [search]);
+
+  return (
+    <>
+      <nav className="container mt-5 border-bottom p-4 bg-light">
+        <div className="d-flex justify-content-between">
+          <h5 className="mt-2">GitHub Profile Finder</h5>
+          <div className="">
+            <form
+              onSubmit={(e) => {getSingle()
+                e.preventDefault();
+              }}
+            >
+              <input
+                className="form-control-sm mx-2"
+                type="text"
+                id="name"
+                name="name"
+                value={search}
+                onChange={handleChange}
+              />
+              <button type="submit" className="btn btn-primary">
+                Search
+              </button>
+            </form>
+          </div>
+          <div className="mt-2">
+            <a className="mx-5" href="https://github.com/williamxmejia">
+              Checkout out my GitHub
+            </a>
+          </div>
+        </div>
+      </nav>
+      <div className="container mt-5">
+        <h1 className="text-center mb-5">
+          Welcome to the GitHub Profile Finder
+        </h1>
+        {/* {data.length > 0 && ( */}
+          <div className="d-flex flex-wrap justify-content-center">
+            {/* <div>{data.login}</div> */}
+            <div key={data.id} className="card col-2 mx-3 mb-5">
+                <img
+                  className="card-img-top"
+                  src={data.avatar_url}
+                  alt="Card image cap"
+                />
+                <div className="card-body fw-bold text-uppercase text-center">
+                  {data.login}
                 </div>
-                <div className='mt-2'><a className='mx-5' href="https://github.com/williamxmejia">Checkout out my GitHub</a></div>
-            </div>
-            
-        </nav>
-    )
-}
+              </div>
+            {/* {data.map((user) => (
+              <div key={user.id} className="card col-2 mx-3 mb-5">
+                <img
+                  className="card-img-top"
+                  src={user.avatar_url}
+                  alt="Card image cap"
+                />
+                <div className="card-body fw-bold text-uppercase text-center">
+                  {user.login}
+                </div>
+              </div>
+            ))} */}
+          </div>
+        {/* )} */}
+      </div>
+    </>
+  );
+};
 
 export default Navbar;

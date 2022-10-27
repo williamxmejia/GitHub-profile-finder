@@ -3,17 +3,29 @@ import axios from 'axios';
 import { useEffect } from 'react';
 import "../bootstrap.css";
 import "../style.css";
+import Fuse from 'fuse.js'
+
 
 
 const Display = () => {
     const [data, setData] = useState([]);
+    const [search, setSearch] = useState([]);
+
+    const fuse = new Fuse(data, {
+      keys: [
+        'login'
+      ]
+    })
+
+    console.log(fuse.search('mojombo'));
+    
   
     const getGitHub = async() => {
       try{
-        const url = "https://api.github.com/users";
+        const url = `https://api.github.com/user`;
         const response = await axios(url);
         const results =  response.data;
-        console.log(results);
+        // console.log(results);
         setData(results);
       } catch(error) {
         console.log(error);
@@ -23,6 +35,7 @@ const Display = () => {
     useEffect(() =>{
       getGitHub()
     }, [])
+
     return(
         <div className='container mt-5'>
             <h1 className='text-center mb-5'>Welcome to the GitHub Profile Finder</h1>
