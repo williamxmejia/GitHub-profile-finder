@@ -5,12 +5,12 @@ const Footer = () => {
     <div className="container">
       <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top container bg-light">
         <div className="col-12 d-flex align-items-center">
-          <span className="mb-3 mb-md-0 text-muted flex-grow-1">
+          <span className="mb-3 mb-md-0 text-dark flex-grow-1">
             © 2022 William Mejia
           </span>
           <ul className="nav col-md-4 justify-content-end list-unstyled d-flex">
             <li className="ms-3">
-              <a className="text-muted" href="https://github.com/williamxmejia">
+              <a className="text-dark" href="https://github.com/williamxmejia">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="32"
@@ -24,7 +24,7 @@ const Footer = () => {
               </a>
             </li>
             <li className="ms-3">
-              <a className="text-muted" href="#">
+              <a className="text-dark" href="#">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="32"
@@ -39,7 +39,7 @@ const Footer = () => {
             </li>
             <li className="ms-3">
               <a
-                className="text-muted"
+                className="text-dark"
                 href="https://www.linkedin.com/in/william-mejiadiaz/"
               >
                 <svg
