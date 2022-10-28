@@ -25,7 +25,7 @@ const Navbar = (props) => {
 
       const response = await axios(url);
       const results = response.data;
-      console.log(results);
+      // console.log(results);
       setData(results);
     } catch (error) {
       // console.log(error);
