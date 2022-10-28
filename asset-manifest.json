@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/react-gh-pages/static/css/main.70fddc4d.css",
-    "main.js": "/react-gh-pages/static/js/main.2a391975.js",
-    "static/js/787.28cb0dcd.chunk.js": "/react-gh-pages/static/js/787.28cb0dcd.chunk.js",
-    "index.html": "/react-gh-pages/index.html",
-    "main.70fddc4d.css.map": "/react-gh-pages/static/css/main.70fddc4d.css.map",
-    "main.2a391975.js.map": "/react-gh-pages/static/js/main.2a391975.js.map",
-    "787.28cb0dcd.chunk.js.map": "/react-gh-pages/static/js/787.28cb0dcd.chunk.js.map"
+    "main.css": "/GitHub-profile-finder/static/css/main.70fddc4d.css",
+    "main.js": "/GitHub-profile-finder/static/js/main.45ebabe6.js",
+    "static/js/787.28cb0dcd.chunk.js": "/GitHub-profile-finder/static/js/787.28cb0dcd.chunk.js",
+    "index.html": "/GitHub-profile-finder/index.html",
+    "main.70fddc4d.css.map": "/GitHub-profile-finder/static/css/main.70fddc4d.css.map",
+    "main.45ebabe6.js.map": "/GitHub-profile-finder/static/js/main.45ebabe6.js.map",
+    "787.28cb0dcd.chunk.js.map": "/GitHub-profile-finder/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.70fddc4d.css",
-    "static/js/main.2a391975.js"
+    "static/js/main.45ebabe6.js"
   ]
 }
