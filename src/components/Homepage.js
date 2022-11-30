@@ -29,7 +29,7 @@ const Navbar = (props) => {
       setData(results);
     } catch (error) {
       // console.log(error);
-      alert("No User Found, try williamxmejia");
+      alert("No User Found");
     }
   };
 
